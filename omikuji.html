@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Omikuji</title>
+  </head>
+  <body>
+    <h1>Omikuji</h1>
+    <input type="button" value="How wil be your day today?" onclick="getOmikuji();">
+    <p>Your day is...<span id="result"></span></p>
+    <script>
+      function getOmikuji() {
+        var omikuji = ["Great!", "Nice", "Okay", "Bad", "Terrible"];
+        var result = Math.floor(Math.random() * omikuji.length);
+        // alert(omikuji[result]);
+        document.getElementById('result').innerHTML = omikuji[result];
+      }
+    </script>
+  </body>
+</html>
