@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+  <title>5 minutes!</title>
+</head>
+<body>
+  <h1>15 minutes!</h1>
+  <p><input type="button" value="start" id="start"></p>
+  <p><input type="button" value="stop" id="stop"></p>
+  <p id="result"></p>
+  <script>
+    document.getElementById('start').onclick = function () {
+      start();
+    }
+
+    document.getElementById('stop').onclick = function () {
+      stop();
+    }
+    
+    var start,
+    stop,
+    diff,
+    FIVE_SECOND = 5 * 1000;
+  
+    function start() {
+      // get the date of begin
+      start = new Date().getTime();
+      console.log(start);
+    }
+
+    function stop() {
+      // get the date of stop
+      stop = new Date().getTime();
+      console.log(stop);
+      // calcurate
+      diff = FIVE_SECOND - (stop - start);
+      // print the result
+      var e = document.getElementById('result');
+      if (diff == 0) {
+        e.innerHTML = 'Great! It was completely correct!';
+      }else if (diff > 0) {
+        e.innerHTML = (diff / 1000) + ' Seconds Later!';
+      }else {
+        e.innerHTML = (diff / 1000) + ' Seconds Before!';
+      }
+    }
+  </script>
+</body>
+</html>
